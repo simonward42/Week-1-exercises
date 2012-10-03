@@ -14,15 +14,10 @@ for(i in 2..max){
     sieve.add(true)
 } 
 
-for(i in 2..max){
-    println sieve[i-2]
-}
-
-int currentNum
 for(int i=2; i<=Math.sqrt(max); i++){
     if(sieve[i-2]){
-        for(int j=0; (i^2+i*j)<=max ;j++){
-            sieve[(i^2 + i*j) - 2] = false
+        for(int j=0; (i*i+i*j)<=max ;j++){
+            sieve[(i*i + i*j) - 2] = false
         }
     }
 }
